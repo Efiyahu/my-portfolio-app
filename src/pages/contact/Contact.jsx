@@ -1,36 +1,69 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import Input from '../../components/input/Input';
 import './Contact.styles.scss';
+import contactImage from '../../assets/contact.jpg';
+import { ThemeContext } from '../../context/ThemeContext';
 
 function Contact() {
+  const { dark } = useContext(ThemeContext);
+
   return (
-    <div className="contact">
-      <h1 className="title">Contact Me</h1>
+    <div className={`contact ${dark ? 'dark' : 'light'}`}>
+      <h1 className="title" style={{ cursor: 'default' }}>
+        Contact Me
+      </h1>
       <div className="container">
         <div className="left">
           <form className="form">
-            <h3 className="subtitle">Fill In</h3>
+            <h3 className="subtitle" style={{ cursor: 'default' }}>
+              Fill In
+            </h3>
             <div className="name-email">
-              <div className="name">
-                <input id="name" name="name" />
-                <label htmlFor="name">Full Name</label>
-              </div>
-              <div className="email">
-                <input id="email" name="email" />
-                <label htmlFor="email">Email</label>
-              </div>
+              <Input
+                className={`name-email-input ${dark ? 'dark' : 'light'}`}
+                name="name"
+                title="Full Name"
+                placeholder="Full Name"
+              />
+              <Input
+                className={`name-email-input ${dark ? 'dark' : 'light'}`}
+                name="email"
+                title="Email"
+                placeholder="Email"
+              />
             </div>
             <div className="subject">
-              <input id="subject" name="subject" />
-              <label htmlFor="subject">Subject</label>
+              <Input
+                className={`subject-input ${dark ? 'dark' : 'light'}`}
+                name="subject"
+                title="Subject"
+                placeholder="Subject"
+              />
             </div>
             <div className="message" name="message">
-              <textarea id="message" name="message" />
-              <label htmlFor="message">Message</label>
+              <div
+                className="textarea-container"
+                style={{ position: 'relative', height: '100%' }}
+              >
+                <textarea
+                  className={`form-textarea ${dark ? 'dark' : 'light'}`}
+                  id="message"
+                  name="message"
+                />
+                <label htmlFor="message" className="label" htmlFor="message">
+                  Message
+                </label>
+              </div>
             </div>
+            <button className="btn-form" type="submit">
+              Send
+            </button>
           </form>
         </div>
         <div className="right">
-          <div className="image"></div>
+          <div className="contact-image-container">
+            <img className="contact-image" src={contactImage} alt="contact" />
+          </div>
         </div>
       </div>
     </div>

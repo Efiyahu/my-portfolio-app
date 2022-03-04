@@ -7,6 +7,15 @@
   align-items: center;
   width: 100%;
   position: relative;
+  transition: all 1s;
+  &.light {
+    background-color: $white;
+    color: $black-dark;
+  }
+  &.dark {
+    background-color: $black-dark;
+    color: $white;
+  }
 
   .title {
     font-family: 'Montserrat', sans-serif;
@@ -28,14 +37,19 @@
     .left {
       display: flex;
       align-items: center;
+      justify-content: center;
       flex-direction: column;
+      padding: 0 2rem;
       flex: 1;
 
       .form {
         display: flex;
         flex-direction: column;
+        align-items: center;
+
         width: 100%;
         height: 100%;
+
         .subtitle {
           font-size: 1.5rem;
           text-transform: uppercase;
@@ -46,72 +60,69 @@
         .name-email {
           width: 100%;
           display: flex;
+          justify-content: space-between;
         }
         .name,
         .email {
           position: relative;
-          input {
-            box-sizing: border-box;
-            border: none;
-            border-bottom: 1px solid $white-darker;
-            margin-left: 3rem;
-            padding: 0.5rem 1rem 0.2rem 0.2rem;
-            font-size: 1rem;
-            font-family: inherit;
-
-            &:focus {
-              outline: none;
-            }
-            &:focus + label {
-              transform: translateY(-2rem);
-              font-size: 0.7rem;
-            }
-          }
-
-          label {
-            position: absolute;
-            z-index: 1;
-            opacity: 0.5;
-            margin-left: 3rem;
-            left: 0;
-            bottom: 0.5rem;
-            cursor: text;
-            transition: all 0.5s;
-          }
         }
         .subject {
-          margin-top: 5rem;
+          margin-top: 4rem;
           position: relative;
           width: 100%;
+        }
 
-          input {
-            box-sizing: border-box;
+        .message {
+          margin-top: 3rem;
+          width: 100%;
+          height: 100%;
+
+          .form-textarea {
+            width: 100%;
+            height: 100%;
             border: none;
-            border-bottom: 1px solid $white-darker;
-            margin-left: 3rem;
-            padding: 0.5rem 1rem 0.2rem 0.2rem;
             font-size: 1rem;
             font-family: inherit;
-            width: 79%;
+            border-bottom: 2px solid $white-darker;
 
+            &.dark {
+              background-color: $black-dark;
+              color: $white;
+            }
+            &.light {
+              background-color: $white;
+              color: $black-dark;
+            }
             &:focus {
               outline: none;
             }
-            &:focus + label {
-              transform: translateY(-2rem);
+
+            &:not(:focus) + .label {
+              opacity: 0;
+            }
+
+            &:focus + .label {
+              transform: translateY(-118px);
               font-size: 0.7rem;
             }
           }
-          label {
-            position: absolute;
-            z-index: 1;
-            opacity: 0.5;
-            margin-left: 3rem;
-            left: 0;
-            bottom: 0.5rem;
-            cursor: text;
-            transition: all 0.5s;
+          textarea::placeholder {
+            color: $white;
           }
+        }
+
+        .btn-form {
+          margin-top: 2rem;
+          border-radius: 10px;
+
+          border: none;
+          padding: 1rem 3rem;
+          font-size: 1rem;
+          font-family: inherit;
+          font-weight: bolder;
+
+          color: $white;
+          background-color: $black-dark;
         }
       }
     }
@@ -119,7 +130,26 @@
     .right {
       flex: 1;
       width: 100%;
-      background-color: yellowgreen;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .contact-image-container {
+        width: 500px;
+        height: 500px;
+        .contact-image {
+          border-radius: 50%;
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+          filter: blur(3px);
+          transition: all 0.5s;
+
+          &:hover {
+            filter: blur(0);
+          }
+        }
+      }
     }
   }
 }
