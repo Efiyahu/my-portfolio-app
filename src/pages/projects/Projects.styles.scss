@@ -1,0 +1,134 @@
+@import '../../utils/variables.scss';
+
+.projects {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  transition: all 1s;
+
+  &.dark {
+    background-color: $black-dark-2;
+  }
+  &.light {
+    background-color: $white;
+  }
+
+  .title {
+    margin: 3rem 0;
+    font-size: 3rem;
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+
+    @media (max-width: 600px) {
+      font-size: 2rem;
+    }
+
+    &.dark {
+      color: $white;
+    }
+
+    &.light {
+      color: $black-dark;
+    }
+
+    &::before {
+      position: absolute;
+      content: '';
+      height: 8px;
+      top: 80%;
+      width: 10rem;
+      opacity: 0.5;
+
+      @media (max-width: 600px) {
+        width: 6rem;
+      }
+    }
+
+    &.dark::before {
+      background-color: $yellowgreen;
+    }
+
+    &.light::before {
+      background-color: $crimson;
+    }
+  }
+  .container {
+    width: 100%;
+    min-height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .card {
+      margin: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 400px;
+      width: 300px;
+      border-radius: 10px;
+
+      @media (max-width: 600px) {
+        height: 350px;
+        width: 250px;
+      }
+
+      &.dark {
+        background-color: $yellowgreen;
+      }
+      &.light {
+        background-color: $white-darker;
+      }
+    }
+    .image {
+      width: 100%;
+      height: 40%;
+      background-color: black;
+      overflow: hidden;
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        transition: all 2s;
+
+        &:hover {
+          transform: scale(1.15);
+        }
+      }
+    }
+    .card-title {
+      font-family: 'Montserrat', sans-serif;
+      margin: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .description {
+      padding: 0 0.5rem;
+      text-align: center;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 200;
+    }
+    .icons {
+      margin: 3rem 0 0 0;
+      display: flex;
+      width: 100%;
+      justify-content: space-evenly;
+
+      .icon {
+        transition: all 0.5s;
+        cursor: pointer;
+
+        &.dark:hover {
+          color: purple;
+        }
+        &.light:hover {
+          color: $crimson;
+        }
+      }
+    }
+  }
+}

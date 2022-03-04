@@ -1,0 +1,150 @@
+@import '../../utils/variables.scss';
+
+.header {
+  font-family: 'League Spartan', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 80px;
+  width: 100%;
+  transition: all 1s;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    height: 150px;
+    width: 100vw;
+  }
+
+  &.dark {
+    background-color: $black-dark;
+    color: $white;
+  }
+  &.light {
+    background-color: $white-darker;
+    color: $black-dark;
+  }
+
+  h1 {
+    margin-left: 1rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+
+    @media (max-width: 915px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+
+    h5 {
+      @media (max-width: 600px) {
+        font-size: 0.5rem;
+      }
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 30px;
+      margin: 0 10px;
+
+      @media (max-width: 600px) {
+        width: 40px;
+        height: 20px;
+      }
+
+      & input {
+        display: none;
+      }
+
+      input:checked + .slider {
+        background-color: $crimson;
+      }
+      input:checked + .slider::before {
+        transform: translateX(100%);
+
+        @media (max-width: 600px) {
+          transform: translateX(120%);
+        }
+      }
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: all 0.4s;
+      border-radius: 34px;
+
+      &::before {
+        position: absolute;
+        content: '';
+        height: 25px;
+        width: 25px;
+        left: 5px;
+        bottom: 3px;
+        background-color: white;
+        transition: all 0.4s;
+        border-radius: 50px;
+
+        @media (max-width: 600px) {
+          width: 15px;
+          height: 15px;
+          left: 3px;
+        }
+      }
+    }
+  }
+
+  .links {
+    width: 50%;
+    display: flex;
+
+    @media (max-width: 600px) {
+      justify-content: center;
+    }
+
+    a {
+      text-decoration: none;
+      margin: 0 0.5rem;
+      font-size: 1.1rem;
+      font-weight: bolder;
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      transition: all 1s;
+
+      @media (max-width: 915px) {
+        font-size: 1rem;
+        padding: 0.6rem 1.2rem;
+      }
+      @media (max-width: 600px) {
+        font-size: 0.7rem;
+        padding: 0.5rem 1rem;
+      }
+
+      &.dark {
+        color: #eee;
+      }
+      &.light {
+        color: $black-dark;
+      }
+
+      &:hover {
+        &.light {
+          background-color: crimson;
+        }
+
+        &.dark {
+          background-color: $black-light;
+        }
+      }
+    }
+  }
+}
