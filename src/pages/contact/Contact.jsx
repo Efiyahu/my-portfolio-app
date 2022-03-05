@@ -90,7 +90,7 @@ function Contact() {
                   id="message"
                   name="message"
                 />
-                <label htmlFor="message" className="label" htmlFor="message">
+                <label htmlFor="message" className="label">
                   Message
                 </label>
               </div>

@@ -16,9 +16,11 @@
   }
 
   &.dark {
-    background-color: $yellowgreen;
+    color: $white;
+    background-color: $crimson;
   }
   &.light {
+    color: $black-dark;
     background-color: $white-darker;
   }
 }
@@ -68,7 +70,7 @@
     cursor: pointer;
 
     &.dark:hover {
-      color: purple;
+      color: $yellowgreen;
     }
     &.light:hover {
       color: $crimson;

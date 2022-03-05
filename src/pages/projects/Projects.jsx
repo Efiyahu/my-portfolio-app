@@ -1,7 +1,5 @@
 import React, { useContext } from 'react';
 import './Projects.styles.scss';
-import { AiFillGithub } from 'react-icons/ai';
-import { SiNetlify } from 'react-icons/si';
 import { ThemeContext } from '../../context/ThemeContext';
 import Card from '../../components/card/Card';
 import quizicalPic from '../../assets/quizicalpic.jpg';

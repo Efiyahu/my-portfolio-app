@@ -10,7 +10,7 @@ function Card({ title, image, description, github_repo, netlify_url }) {
   return (
     <div className={`card ${dark ? 'dark' : 'light'}`}>
       <div className="image">
-        <img className="project-image" src={image} />
+        <img className="project-image" src={image} alt="projet" />
       </div>
       <h3 className="card-title">{title}</h3>
       <p className="description">{description}</p>
