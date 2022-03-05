@@ -6,6 +6,7 @@ import { ThemeContext } from '../../context/ThemeContext';
 import Card from '../../components/card/Card';
 import quizicalPic from '../../assets/quizicalpic.jpg';
 import eathWithUsPic from '../../assets/eatiwithus.jpg';
+import shoppingImage from '../../assets/shoppingapp.jpg';
 
 function Projects() {
   const { dark } = useContext(ThemeContext);
@@ -29,14 +30,11 @@ function Projects() {
           github_repo="https://github.com/Efiyahu/my-recipe-app"
         />
         <Card
-          title="Project Name"
-          image={quizicalPic}
-          description="Id laborum sit dolor qui velit ea consequat irure Lorem ex commodo exercitation deserunt esse."
-        />
-        <Card
-          title="Project Name"
-          image={quizicalPic}
-          description="Id laborum sit dolor qui velit ea consequat irure Lorem ex commodo exercitation deserunt esse."
+          title="Shopping Cart"
+          image={shoppingImage}
+          description="Simple React Shopping Cart using Context/Reducers and dummy data"
+          netlify_url="https://efi-shopping-app.netlify.app"
+          github_repo="https://github.com/Efiyahu/shopping-app.git"
         />
       </div>
     </div>
