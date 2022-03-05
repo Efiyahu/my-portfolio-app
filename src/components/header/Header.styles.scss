@@ -16,7 +16,7 @@
   }
 
   &.dark {
-    background-color: $black-dark;
+    background-color: $black-darker;
     color: $white;
   }
   &.light {
@@ -139,7 +139,7 @@
 
       &:hover {
         &.light {
-          background-color: crimson;
+          background-color: $white;
         }
 
         &.dark {

@@ -4,7 +4,7 @@ import { AiFillGithub } from 'react-icons/ai';
 import { SiNetlify } from 'react-icons/si';
 import { ThemeContext } from '../../context/ThemeContext';
 
-function Card({ title, image, description }) {
+function Card({ title, image, description, github_repo, netlify_url }) {
   const { dark } = useContext(ThemeContext);
 
   return (
@@ -15,8 +15,21 @@ function Card({ title, image, description }) {
       <h3 className="card-title">{title}</h3>
       <p className="description">{description}</p>
       <div className="icons">
-        <AiFillGithub size={30} className={`icon ${dark ? 'dark' : 'light'}`} />
-        <SiNetlify size={30} className={`icon ${dark ? 'dark' : 'light'}`} />
+        <a
+          style={{ color: 'inherit', textDecoration: 'none' }}
+          href={github_repo}
+        >
+          <AiFillGithub
+            size={30}
+            className={`icon ${dark ? 'dark' : 'light'}`}
+          />
+        </a>
+        <a
+          style={{ color: 'inherit', textDecoration: 'none' }}
+          href={netlify_url}
+        >
+          <SiNetlify size={30} className={`icon ${dark ? 'dark' : 'light'}`} />
+        </a>
       </div>
     </div>
   );

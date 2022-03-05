@@ -8,6 +8,10 @@
   width: 100%;
   position: relative;
   transition: all 1s;
+
+  @media (max-width: 900px) {
+    height: 100%;
+  }
   &.light {
     background-color: $white;
     color: $black-dark;
@@ -22,6 +26,12 @@
     margin: 2rem;
     font-weight: bold;
     font-size: 3rem;
+
+    @media (max-width: 900px) {
+      margin: 1rem;
+      font-size: 1.5rem;
+      text-align: center;
+    }
   }
 
   .container {
@@ -42,6 +52,10 @@
       padding: 0 2rem;
       flex: 1;
 
+      @media (max-width: 900px) {
+        width: 50%;
+      }
+
       .form {
         display: flex;
         flex-direction: column;
@@ -56,11 +70,19 @@
           letter-spacing: 1px;
           margin-bottom: 2rem;
           text-align: center;
+
+          @media (max-width: 900px) {
+            display: none;
+          }
         }
         .name-email {
           width: 100%;
           display: flex;
           justify-content: space-between;
+
+          @media (max-width: 900px) {
+            flex-direction: column;
+          }
         }
         .name,
         .email {
@@ -70,6 +92,10 @@
           margin-top: 4rem;
           position: relative;
           width: 100%;
+
+          @media (max-width: 900px) {
+            margin-top: 0rem;
+          }
         }
 
         .message {
@@ -84,6 +110,10 @@
             font-size: 1rem;
             font-family: inherit;
             border-bottom: 2px solid $white-darker;
+
+            @media (max-width: 900px) {
+              font-size: 0.7rem;
+            }
 
             &.dark {
               background-color: $black-dark;
@@ -104,6 +134,11 @@
             &:focus + .label {
               transform: translateY(-118px);
               font-size: 0.7rem;
+
+              @media (max-width: 900px) {
+                transform: translateY(-3rem);
+                font-size: 0.5rem;
+              }
             }
           }
           textarea::placeholder {
@@ -120,9 +155,23 @@
           font-size: 1rem;
           font-family: inherit;
           font-weight: bolder;
+          cursor: pointer;
 
           color: $white;
           background-color: $black-dark;
+          transition: all 1s;
+
+          @media (max-width: 900px) {
+            margin-top: 1rem;
+            padding: 0.5rem 1.5rem;
+          }
+
+          &.dark-form:hover {
+            background-color: $black-light;
+          }
+          &.light-form:hover {
+            background-color: $crimson;
+          }
         }
       }
     }
@@ -137,6 +186,11 @@
       .contact-image-container {
         width: 500px;
         height: 500px;
+
+        @media (max-width: 900px) {
+          width: 200px;
+          height: 200px;
+        }
         .contact-image {
           border-radius: 50%;
           object-fit: cover;

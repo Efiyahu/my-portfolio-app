@@ -1,10 +1,12 @@
 import React from 'react';
 import './Input.styles.scss';
 
-function Input({ className, name, title, placeholder }) {
+function Input({ className, name, title, placeholder, onChange, value }) {
   return (
     <div className={name}>
       <input
+        onChange={onChange}
+        value={value}
         className={className}
         id={name}
         name={name}

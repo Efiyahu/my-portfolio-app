@@ -7,6 +7,7 @@
   align-items: center;
   height: 400px;
   width: 300px;
+  position: relative;
   border-radius: 10px;
 
   @media (max-width: 600px) {
@@ -44,10 +45,12 @@
   margin: 1rem;
   text-transform: uppercase;
   letter-spacing: 1px;
+  cursor: default;
 }
 .description {
-  padding: 0 0.5rem;
-  text-align: center;
+  cursor: default;
+  padding: 0 2rem;
+  text-align: left;
   font-family: 'Montserrat', sans-serif;
   font-size: 0.9rem;
   font-weight: 200;
@@ -57,6 +60,8 @@
   display: flex;
   width: 100%;
   justify-content: space-evenly;
+  position: absolute;
+  bottom: 1rem;
 
   .icon {
     transition: all 0.5s;

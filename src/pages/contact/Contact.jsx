@@ -1,11 +1,43 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Input from '../../components/input/Input';
 import './Contact.styles.scss';
 import contactImage from '../../assets/contact.jpg';
 import { ThemeContext } from '../../context/ThemeContext';
+import emailjs from '@emailjs/browser';
 
 function Contact() {
+  const [inputs, setInputs] = useState({
+    to_name: 'Efraim Alkhazov',
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
   const { dark } = useContext(ThemeContext);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    emailjs.send(
+      'service_4izpe3d',
+      'template_dcwwdjy',
+      inputs,
+      'YOUOT2P4onQOM8QUb'
+    );
+    setInputs({
+      name: '',
+      email: '',
+      subject: '',
+      message: '',
+    });
+  };
+
+  const handleChange = (e) => {
+    setInputs((inputs) => ({
+      ...inputs,
+      [e.target.name]: [e.target.value],
+    }));
+  };
 
   return (
     <div className={`contact ${dark ? 'dark' : 'light'}`}>
@@ -14,18 +46,22 @@ function Contact() {
       </h1>
       <div className="container">
         <div className="left">
-          <form className="form">
+          <form onSubmit={handleSubmit} className="form">
             <h3 className="subtitle" style={{ cursor: 'default' }}>
               Fill In
             </h3>
             <div className="name-email">
               <Input
+                onChange={handleChange}
+                value={inputs.name}
                 className={`name-email-input ${dark ? 'dark' : 'light'}`}
                 name="name"
-                title="Full Name"
-                placeholder="Full Name"
+                title="Name"
+                placeholder="Name"
               />
               <Input
+                onChange={handleChange}
+                value={inputs.email}
                 className={`name-email-input ${dark ? 'dark' : 'light'}`}
                 name="email"
                 title="Email"
@@ -34,6 +70,8 @@ function Contact() {
             </div>
             <div className="subject">
               <Input
+                onChange={handleChange}
+                value={inputs.subject}
                 className={`subject-input ${dark ? 'dark' : 'light'}`}
                 name="subject"
                 title="Subject"
@@ -46,6 +84,8 @@ function Contact() {
                 style={{ position: 'relative', height: '100%' }}
               >
                 <textarea
+                  onChange={handleChange}
+                  value={inputs.message}
                   className={`form-textarea ${dark ? 'dark' : 'light'}`}
                   id="message"
                   name="message"
@@ -55,7 +95,10 @@ function Contact() {
                 </label>
               </div>
             </div>
-            <button className="btn-form" type="submit">
+            <button
+              className={`btn-form ${dark ? 'dark-form' : 'light-form'}`}
+              type="submit"
+            >
               Send
             </button>
           </form>
