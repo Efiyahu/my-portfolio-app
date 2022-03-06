@@ -7,6 +7,9 @@ import { DiJavascript } from 'react-icons/di';
 import { DiJava } from 'react-icons/di';
 import { AiFillHtml5 } from 'react-icons/ai';
 import { ThemeContext } from '../../context/ThemeContext';
+import ResumeHeb from '../../assets/resume-hebrew.pdf';
+import ResumeEng from '../../assets/resume-english.pdf';
+import { BsDownload } from 'react-icons/bs';
 
 function About() {
   const { dark } = useContext(ThemeContext);
@@ -31,6 +34,34 @@ function About() {
           </span>
           . Hope to be of service :)
         </p>
+        <div className="files">
+          <a
+            href={ResumeHeb}
+            download="Resume-Hebrew"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <button className={`files-btn ${dark ? 'dark' : 'light'}`}>
+              Resume (Hebrew){' '}
+              <span style={{ marginLeft: '.3rem' }}>
+                <BsDownload />
+              </span>
+            </button>
+          </a>
+          <a
+            href={ResumeEng}
+            download="Resume-English"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <button className={`files-btn ${dark ? 'dark' : 'light'}`}>
+              Resume (English){' '}
+              <span style={{ marginLeft: '.3rem' }}>
+                <BsDownload />
+              </span>
+            </button>
+          </a>
+        </div>
       </div>
       <div className="lower">
         <div className="specialties">

@@ -79,6 +79,56 @@
         font-size: 0.7rem;
       }
     }
+    .files {
+      display: flex;
+      margin-top: 3rem;
+      margin-bottom: 1.5rem;
+      width: 100%;
+      justify-content: space-between;
+
+      @media (max-width: 600px) {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .files-btn {
+        border: none;
+        padding: 1rem 3rem;
+        border-radius: 10px;
+        font-weight: bold;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 1s;
+
+        @media (max-width: 600px) {
+          font-size: 0.7rem;
+          padding: 0.5rem 1.2rem;
+          margin-bottom: 1rem;
+        }
+
+        &:hover {
+          transform: scale(1.05);
+
+          &.dark {
+            background-color: $yellowgreen;
+          }
+
+          &.light {
+            background-color: $crimson;
+          }
+        }
+
+        &.dark {
+          background-color: $black-light;
+          color: $white;
+        }
+
+        &.light {
+          background-color: $white-darker;
+          color: $black-dark;
+        }
+      }
+    }
   }
 
   .lower {
