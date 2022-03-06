@@ -22,7 +22,7 @@ function Projects() {
         <Card
           title="Eath With Us"
           image={eathWithUsPic}
-          description="Recipe App using Forkify API created by Jonas Schmedtman. Implementing Firebase Auth/Firestore React
+          description="Recipe App using Forkify API. Implementing Firebase Auth/Firestore React
           Context API and useReducer hook."
           netlify_url="https://eatwithus.netlify.app"
           github_repo="https://github.com/Efiyahu/my-recipe-app"
