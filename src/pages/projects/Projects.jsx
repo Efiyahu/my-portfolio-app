@@ -39,7 +39,7 @@ function Projects() {
           title="Budgety"
           image={budgetyImage}
           description="A money managment app with Firebase authentication, using sass for the design implementing Chart.js"
-          netlify_url="https://budgety-money.netlify.app/sign-in"
+          netlify_url="https://budgety-money.netlify.app"
           github_repo="https://github.com/Efiyahu/money-mamangment-app"
         />
       </div>
