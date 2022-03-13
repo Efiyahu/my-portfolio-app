@@ -26,7 +26,7 @@ function Home() {
               <span
                 className={`dynamic-span ${dark ? 'dark-line' : 'light-line'}`}
               >
-                Front End Developer
+                Pront End Developer
               </span>
             </li>
           </ul>
