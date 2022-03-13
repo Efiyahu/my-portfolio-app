@@ -5,6 +5,7 @@ import Card from '../../components/card/Card';
 import quizicalPic from '../../assets/quizicalpic.jpg';
 import eathWithUsPic from '../../assets/eatiwithus.jpg';
 import shoppingImage from '../../assets/shoppingapp.jpg';
+import budgetyImage from '../../assets/budgety.png';
 
 function Projects() {
   const { dark } = useContext(ThemeContext);
@@ -33,6 +34,13 @@ function Projects() {
           description="Simple React Shopping Cart using Context/Reducers and dummy data"
           netlify_url="https://efi-shopping-app.netlify.app"
           github_repo="https://github.com/Efiyahu/shopping-app.git"
+        />
+        <Card
+          title="Budgety"
+          image={budgetyImage}
+          description="A money managment app with Firebase authentication, using sass for the design implementing Chart.js"
+          netlify_url="https://budgety-money.netlify.app/sign-in"
+          github_repo="https://github.com/Efiyahu/money-mamangment-app"
         />
       </div>
     </div>
